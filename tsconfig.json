@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "ES2019",
+        "module": "CommonJS",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "types": ["oracledb"],
+        "esModuleInterop": true,
+    },
+    "include": ["src/**/*.ts", "src/main.js", "src/connection-db.js"],
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "appdesktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ./src/main.js",
+    "dev": "tsc -w",
+    "electron": "electron ./dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "electron": "^27.1.2",
+    "oracledb": "^6.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/oracledb": "^6.0.4"
+  }
+}

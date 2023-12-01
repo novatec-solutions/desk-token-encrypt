@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registro de Token</title>
+</head>
+<body>
+    <div class="container">
+        <label for="textToken">Ingrese el token:</label>
+        <input type="password" id="text">
+        <button id="btn" >Enviar</button>
+    </div>
+
+    <script>
+
+        const {ipcRenderer} = require('electron');
+            
+        const btn = document.getElementById('btn');
+        const text = document.getElementById('text');
+        
+        btn.addEventListener("click", () => {
+            console.log('Escuchando el renderizado');
+            const inputToken = text.value.trim();
+
+            ipcRenderer.send('handle-button-click', inputToken);
+        });
+    
+
+        ipcRenderer.on('handle-button-click-result', (event, result) => {
+            console.log('Resultado del Botón', result);
+            if(result.success){
+                alert(result.message);
+            }else {
+                alert(result.message);
+            }
+        });
+
+        ipcRenderer.on('clear-input', () => {
+            text.value = '';
+        })
+    </script>
+    
+</body>
+</html>
